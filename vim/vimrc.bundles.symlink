@@ -26,40 +26,67 @@ com! -nargs=+  -bar Bundle call VundleToPlug("Bundle", <args>)
 
 call plug#begin('~/.vim/bundle')
 
-" Define bundles via Github repos
-Plug 'christoomey/vim-run-interactive'
-Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'scrooloose/syntastic'
-Plug 'slim-template/vim-slim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
-Plug 'editorconfig/editorconfig-vim'
+" Selectively run commands via an interactive shell
+" Plug 'christoomey/vim-run-interactive'
 
+" Vim support for coffee script
+Plug 'kchmck/vim-coffee-script'
+
+" Fuzzy file finder
+Plug 'kien/ctrlp.vim'
+
+" Easy file creation
+" Plug 'pbrisbin/vim-mkdir'
+"
+" Slim (HAML like markup) syntax highlighting
+" Plug 'slim-template/vim-slim'
+" Run RSpec tests through vim
+" Plug 'thoughtbot/vim-rspec'
+" Bundler support through vim
+" Plug 'tpope/vim-bundler'
+" End structures (if, do, etc.) automatically
+" Plug 'tpope/vim-endwise'
+" Exposes common file maniuplation commands
+" Plug 'tpope/vim-eunuch'
+" Expose Git Commands
+Plug 'tpope/vim-fugitive'
+" Switch between files with common extensions, needed for vim rails and vim rake
+Plug 'tpope/vim-projectionist'
+" Easy Naviation between rails views/models/controllers
+Plug 'tpope/vim-rails'
+" Expose rake commands
+Plug 'tpope/vim-rake'
+" Easy repeat commands
+Plug 'tpope/vim-repeat'
+" Surroudn with quotes and tags
+Plug 'tpope/vim-surround'
+" Edit and compile Ruby from within Vim
+Plug 'vim-ruby/vim-ruby'
+" Comments
+" Plug 'vim-scripts/tComment'
+" Vim Editor configuration
+Plug 'editorconfig/editorconfig-vim'
+" Status tabline for vim
 Plug 'bling/vim-airline'
+" file browsing
 Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
+" tab alignments on things like hashes
 Plug 'godlygeek/tabular'
-Plug 'Raimondi/delimitMate'
-Plug 'kien/rainbow_parentheses.vim' "Not sure I want to keep this
-Plug 'mattn/emmet-vim'
+"Plug 'Raimondi/delimitMate'
+"Plug 'kien/rainbow_parentheses.vim' "Not sure I want to keep this
+"Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/neocomplete.vim'
-
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'scrooloose/syntastic'
 
+Plug 'Townk/vim-autoclose'
+Plug 'vim-scripts/closetag.vim'
+Plug 'edsono/vim-matchit'
+Plug 'jeetsukumaran/vim-buffergator'
+
+" themes
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'croaker/mustang-vim'
@@ -68,6 +95,8 @@ Plug 'sickill/vim-monokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'mkarmona/colorsbox'
 Plug 'mkarmona/materialbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'freeo/vim-kalisi'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

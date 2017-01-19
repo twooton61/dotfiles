@@ -1,6 +1,9 @@
 " Leader
 let mapleader = ","
 
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
+
 set clipboard=unnamed
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -168,7 +171,7 @@ let g:airline#extensions#tabline#enabled = 1    " Automatically display all buff
 let g:airline_powerline_fonts=1
 set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly"
 set encoding=utf-8
-colorscheme Tomorrow-Night
+colorscheme kalisi
 
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
@@ -178,16 +181,16 @@ let g:neocomplete#enable_at_startup = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetsDir="~/.vim/mysnippets/all"
+let g:UltiSnipsSnippetDirectories=['all']
+let g:UltiSnipsEnableSnipMate=1
+set runtimepath+=~/.vim/mysnippets
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 " Enable awesome pasting action with ,p
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-
-" Prevent text from unhighlighting when indenting
-vnoremap < <gv
-vnoremap > >gv
 
 "search and replace
 let g:search = ""
@@ -276,6 +279,7 @@ nn <Leader>rc :call CFReplace()<CR>
 
 " Prevent EditorConfig from clashing with Fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
