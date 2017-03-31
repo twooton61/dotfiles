@@ -171,7 +171,6 @@ let g:airline#extensions#tabline#enabled = 1    " Automatically display all buff
 let g:airline_powerline_fonts=1
 set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly"
 set encoding=utf-8
-colorscheme kalisi
 
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
