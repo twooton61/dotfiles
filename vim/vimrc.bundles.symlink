@@ -96,7 +96,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'cakebaker/scss-syntax.vim'
 
 " inline syntax checking plugin
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 " auto close characters
 " Plug 'Townk/vim-autoclose'
