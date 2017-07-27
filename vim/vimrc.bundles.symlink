@@ -2,28 +2,6 @@ if &compatible
   set nocompatible
 end
 
-" Shim command and function to allow migration from Vundle to vim-plug.
-function! VundleToPlug(vundle_command, arg, ...)
-  echom "You are using Vundle's `".a:vundle_command."` command to declare plugins. Dotfiles now uses vim-plug for plugin mangagement. Please rename uses of `".a:vundle_command."` to `Plug`. Plugin was '".a:arg."'."
-  let vim_plug_options = {}
-
-  if a:0 > 0
-    if has_key(a:1, 'name')
-      let name = a:1.name
-      let vim_plug_options.dir = "$HOME/.vim/bundle/".a:1.name
-    endif
-
-    if has_key(a:1, 'rtp')
-      let vim_plug_options.rtp = a:1.rtp
-    endif
-  endif
-
-  Plug a:arg, vim_plug_options
-endfunction
-
-com! -nargs=+  -bar Plugin call VundleToPlug("Plugin", <args>)
-com! -nargs=+  -bar Bundle call VundleToPlug("Bundle", <args>)
-
 call plug#begin('~/.vim/bundle')
 
 " Selectively run commands via an interactive shell
@@ -57,19 +35,19 @@ Plug 'kien/ctrlp.vim'
 " Plug 'tpope/vim-fugitive'
 
 " Switch between files with common extensions, needed for vim rails and vim rake
-Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-projectionist'
 
 " Easy Naviation between rails views/models/controllers
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 
 " Expose rake commands
-Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-rake'
 
 " Easy repeat commands
 Plug 'tpope/vim-repeat'
 
 " Surroudn with quotes and tags
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Edit and compile Ruby from within Vim
 " Plug 'vim-ruby/vim-ruby'
@@ -78,7 +56,7 @@ Plug 'tpope/vim-repeat'
 " Plug 'vim-scripts/tComment'
 
 " Vim Editor configuration
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Status tabline for vim
 Plug 'bling/vim-airline'
@@ -107,6 +85,8 @@ Plug 'cakebaker/scss-syntax.vim'
 
 " themes
 Plug 'joshdick/onedark.vim'
+
+" Plug 'preocanin/greenwint'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
