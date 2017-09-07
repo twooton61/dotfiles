@@ -23,7 +23,7 @@ do
 done
 
 # load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/rbenv.zsh}
 do
   source $file
 done
@@ -35,17 +35,20 @@ compinit
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
+	echo ".."
+	echo $file
   source $file
 done
 
 unset config_files
 
- export PATH="$HOME/.bin:$PATH"
- export PATH="$PATH:`yarn global bin`"
- export PATH="$PATH:$HOME/Library/Python/2.7/bin"
-
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] && export TERM=xterm-256color
+
+# load rbenv very last or the VIM 8 installation of ruby loaded by oh-my-zsh.zsh in /usr/local/bin will take priority
+source "$DOTZSH/ruby/rbenv.zsh"
