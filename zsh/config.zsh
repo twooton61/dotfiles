@@ -7,6 +7,7 @@ fi
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 export VISUAL='nvim'
+export TERM="xterm-256color"
 
 fpath=($DOTZSH/functions $fpath)
 

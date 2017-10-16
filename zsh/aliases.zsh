@@ -11,3 +11,5 @@ alias wt="cd wp-content/themes"
 
 alias p="cd ~/Projects"
 alias vim="nvim"
+alias tmux='tmux -2'  # for 256color
+alias tmux='tmux -u'  # to get rid of unicode rendering problem
