@@ -13,3 +13,5 @@ alias p="cd ~/Projects"
 alias vim="nvim"
 alias tmux='tmux -2'  # for 256color
 alias tmux='tmux -u'  # to get rid of unicode rendering problem
+alias fixperms='find . -type f ! -path "*node_modules*" ! -path "*Makefile*" -exec chmod 644 {} \; && find . -type d ! -path "*node_modules*" -exec chmod 755 {} \;'
+alias bfg="java -jar ~/.bin/bfg.jar"
