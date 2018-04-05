@@ -43,6 +43,8 @@ unset config_files
 export PATH="$HOME/.bin:$PATH"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+export CDPATH=".:/Users/terry/Projects"
+export JEKYLL_ENV="development"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -50,3 +52,5 @@ export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 # load rbenv very last or the VIM 8 installation of ruby loaded by oh-my-zsh.zsh in /usr/local/bin will take priority
 source "$DOTZSH/ruby/rbenv.zsh"
+
+ssh-add -K ~/.ssh/id_rsa
